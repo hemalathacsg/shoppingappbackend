@@ -2,7 +2,10 @@ package com.crud.shoppingapp.entity;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
+import jakarta.persistence.Table;
+
 @Entity
+@Table(name="cart")
 public class Cart {
     @Id
     private Integer productId;

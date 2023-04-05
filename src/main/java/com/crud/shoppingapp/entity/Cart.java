@@ -13,6 +13,15 @@ public class Cart {
     private String productDescription;
     private Double productDiscountPrice;
     private Double productActualPrice;
+    private Integer quantity;
+
+    public Integer getQuantity() {
+        return quantity;
+    }
+
+    public void setQuantity(Integer quantity) {
+        this.quantity = quantity;
+    }
 
     public Integer getProductId() {
         return productId;

@@ -1,11 +1,9 @@
 package com.crud.shoppingapp.contoller;
 
-import com.crud.shoppingapp.dao.CartDao;
 import com.crud.shoppingapp.entity.Cart;
 import com.crud.shoppingapp.entity.Product;
 import com.crud.shoppingapp.service.ProductService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -62,5 +60,8 @@ public class ProductController {
     public int decCartProdQuantity(@PathVariable int productId){
         return productService.decCartProdQuantity(productId);
     }
-
+    @GetMapping("/viewProductDetails/{productId}")
+    public Optional<Product> viewProductDetails(@PathVariable int productId){
+        return productService.viewProductDetails(productId);
+    }
 }

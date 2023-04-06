@@ -7,7 +7,6 @@ import com.crud.shoppingapp.entity.Product;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.util.Arrays;
 import java.util.List;
 import java.util.Optional;
 
@@ -86,5 +85,8 @@ public class ProductService {
             return cartProd.getQuantity();
         }
         return cartProd.getQuantity();
+    }
+    public Optional<Product> viewProductDetails(int productId){
+        return productDao.findById(productId);
     }
 }

@@ -11,7 +11,7 @@ import java.util.Optional;
 
 @RestController
 //@CrossOrigin(origins = "http://localhost:4200")
-@CrossOrigin("*")
+//@CrossOrigin("*")
 
 public class ProductController {
     @Autowired

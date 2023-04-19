@@ -44,12 +44,16 @@ public class ProductService {
         Optional<Cart> cartproduct=cartDao.findById(productId);
         cartDao.delete(cartproduct.get());
     }
-    public double totalCartProductsPrice() {
-        List<Cart> cartProducts = (List<Cart>) cartDao.findAll();
-        cartProducts.stream().mapToDouble(cart -> cart.getProductDiscountPrice().doubleValue()).forEach(s->System.out.println(s));
-        System.out.println("Working fine");
-        return cartProducts.stream().mapToDouble(cart -> cart.getProductDiscountPrice().doubleValue()).sum();
+    public double totalCartPrice(){
+        List<Cart> optionalCart= (List<Cart>) cartDao.findAll();
+        return optionalCart.stream().mapToDouble(cart->cart.getProductDiscountPrice()*cart.getQuantity().doubleValue()).sum();
     }
+//    public double totalCartProductsPrice() {
+//        List<Cart> cartProducts = (List<Cart>) cartDao.findAll();
+//        cartProducts.stream().mapToDouble(cart -> cart.getProductDiscountPrice().doubleValue()).forEach(s->System.out.println(s));
+//        System.out.println("Working fine");
+//        return cartProducts.stream().mapToDouble(cart -> cart.getProductDiscountPrice().doubleValue()).sum();
+//    }
 
     public int incProdQuantity(int productId){
         Optional<Product> optionalProduct = productDao.findById(productId);

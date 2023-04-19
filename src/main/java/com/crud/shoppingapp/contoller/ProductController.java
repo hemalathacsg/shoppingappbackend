@@ -42,7 +42,7 @@ public class ProductController {
     }
     @GetMapping("/totalCartProductsPrice")
     public double totalCartProductsPrice(){
-        return productService.totalCartProductsPrice();
+        return productService.totalCartPrice();
     }
     @PostMapping("/incProdQuantity/{productId}")
     public int incProdQuantity(@PathVariable int productId) {
